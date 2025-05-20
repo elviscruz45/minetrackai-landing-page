@@ -1,6 +1,6 @@
 {
-  "hero_title": "blackspike astro<br>landing page",
-  "hero_content": "<p><strong>A free Astro landing theme made with Tailwind</strong> to help kick start your Astro website.</p><p>Uses modern CSS and HTML features for added zip, plus a slick swiper carousel. All in Astro JSX.</p>",
+  "hero_title": "MineTrack AI<br>",
+  "hero_content": "<p><strong>Solución inteligente para monitoreo y optimización de paradas de planta</strong> diseñada para la industria minera.</p><p>MineTrack AI integra IA, aprendizaje automático y tecnologías cloud para una gestión precisa en tiempo real. Compatible con web y móvil.</p>",
   "services_title": "Our services",
   "clients_title": "Trusted by some great companies",
   "testimonials_title": "Clients ♥ us",
@@ -10,5 +10,5 @@
   "quote_cite": "Sean Higgins",
   "quote_role": "CTO, Interia",
   "quote_image": "/content-images/quote-man.avif",
-  "faq_title": "Frequently Asked Questions"
+  "faq_title": "Preguntas frecuentes"
 }
