@@ -1,7 +1,7 @@
 ---
 
 import Image from "astro/components/Image.astro"
-import hero_screens from "../assets/theme-images/hero-screens.png"
+import hero_screens from "../assets/theme-images/iphone3.png"
 
 const { settings, title, content } = Astro.props
 
@@ -28,9 +28,31 @@ const { settings, title, content } = Astro.props
 
   <!-- Image -->
   <figure class="flex place-content-center -mt-20 lg:mt-0">
-
-    <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" />
-
+<div class="w-30 md:w-30 lg:w-30">
+  <Image 
+    src={ hero_screens } 
+    format="avif"
+    width={600} 
+    height={900}
+    class="w-full h-auto mt-10"
+    quality="mid" 
+    alt="Screens showing phone, tablet and desktop views of our website" 
+    loading="eager" 
+  />
+</div>
+    <!-- <Image src={ hero_screens } format="avif"     width={1400} 
+    height={200}  quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" /> -->
+    <!-- <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" /> -->
+  <!-- <Image 
+    src={ hero_screens } 
+    format="avif" 
+    quality="mid" 
+    width={400} 
+    height={600} 
+    class="max-w-full h-auto" 
+    alt="Screens showing phone, tablet and desktop views of our website" 
+    loading="eager" 
+  /> -->
   </figure>
 
 </section>
