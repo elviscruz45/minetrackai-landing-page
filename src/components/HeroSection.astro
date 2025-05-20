@@ -2,6 +2,8 @@
 
 import Image from "astro/components/Image.astro"
 import hero_screens from "../assets/theme-images/iphone3.png"
+import hero_screens5 from "../assets/theme-images/iphone5.png"
+import hero_screens7 from "../assets/theme-images/iphone7.png"
 
 const { settings, title, content } = Astro.props
 
@@ -31,6 +33,30 @@ const { settings, title, content } = Astro.props
 <div class="w-30 md:w-30 lg:w-30">
   <Image 
     src={ hero_screens } 
+    format="avif"
+    width={600} 
+    height={900}
+    class="w-full h-auto mt-10"
+    quality="mid" 
+    alt="Screens showing phone, tablet and desktop views of our website" 
+    loading="eager" 
+  />
+</div>
+<div class="w-30 md:w-30 lg:w-30">
+  <Image 
+    src={ hero_screens5 } 
+    format="avif"
+    width={600} 
+    height={900}
+    class="w-full h-auto mt-10"
+    quality="mid" 
+    alt="Screens showing phone, tablet and desktop views of our website" 
+    loading="eager" 
+  />
+</div>
+<div class="w-30 md:w-30 lg:w-30">
+  <Image 
+    src={ hero_screens7 } 
     format="avif"
     width={600} 
     height={900}
