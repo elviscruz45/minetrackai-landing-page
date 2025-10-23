@@ -2,12 +2,13 @@
   "title": "MineTrack AI",
   "description": "A free Astro landing theme made with Tailwind",
   "social_image": "/1200x630.jpg",
-  "base_url": "https://astro-theme.blackspike.com",
+  "base_url": "https://www.minetrack.site",
   "demo": {
     "title": "¿Necesita una demo?",
     "content": "<strong>Solicite una demostración guiada de MineTrack AI</strong> y descubra cómo usted y su equipo pueden transformar la gestión de paradas de planta y mantenimiento crítico.",
     "cta": "Solicitar demo"
   },
+
   "theme_color": "#18181b",
   "nav": [
     {

@@ -30,18 +30,33 @@ const { title, description } = Astro.props
 
     <title>{ title ?? global_settings.title }</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <link rel="manifest" href="/manifest.json" />
 
     <meta name="description" content={ description ?? global_settings.description } />
     <meta name="theme-color" content={ global_settings.theme_color } />
-
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={ Astro.url.href } />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ Astro.url.href } />
     <meta property="og:title" content={ title ?? global_settings.title } />
     <meta property="og:description" content={ description ?? global_settings.description } />
-    <meta
-      property="og:image"
-      content={ global_settings.base_url + global_settings.social_image }
-    />
+    <meta property="og:image" content={ global_settings.base_url + global_settings.social_image } />
+    <meta property="og:site_name" content="MineTrack AI" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={ Astro.url.href } />
+    <meta name="twitter:title" content={ title ?? global_settings.title } />
+    <meta name="twitter:description" content={ description ?? global_settings.description } />
+    <meta name="twitter:image" content={ global_settings.base_url + global_settings.social_image } />
 
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-display" preload />

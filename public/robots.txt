@@ -1,0 +1,11 @@
+# robots.txt para minetrack-astro-landing-page
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.minetrack.site/sitemap-index.xml
+
+# Disallow admin or private pages if any
+# Disallow: /admin/
+# Disallow: /private/
