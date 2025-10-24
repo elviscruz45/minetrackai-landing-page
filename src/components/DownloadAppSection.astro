@@ -1,0 +1,199 @@
+---
+const { title, description, email } = Astro.props
+---
+
+<section class="relative py-20 lg:py-32 bg-gradient-to-b from-bs-surface-1 to-bs-surface-0">
+  <div class="bs-container">
+    
+    <!-- Shutdown Logo -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-xl shadow-red-500/30">
+          <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+          </svg>
+        </div>
+        <span class="text-4xl font-bold text-red-500">SHUTDOWN</span>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      <!-- Left: Info -->
+      <div class="space-y-6">
+        
+        <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight" set:html={title} />
+        
+        <p class="text-lg text-gray-300 leading-relaxed" set:html={description} />
+
+        <!-- Contact email -->
+        <div class="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl">
+          <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+          <a href={`mailto:${email}`} class="text-white hover:text-red-400 transition-colors duration-200 font-semibold">
+            {email}
+          </a>
+        </div>
+
+        <!-- App Store Badges -->
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a 
+            href="https://play.google.com/store" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block transition-transform duration-300 hover:scale-105"
+          >
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+              alt="Get it on Google Play" 
+              class="h-14"
+            />
+          </a>
+          <a 
+            href="https://www.apple.com/app-store/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block transition-transform duration-300 hover:scale-105"
+          >
+            <img 
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+              alt="Download on the App Store" 
+              class="h-14"
+            />
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right: Form -->
+      <div class="glass p-8 rounded-2xl">
+        
+        <form id="downloadForm" class="space-y-5" onsubmit="handleDownloadSubmit(event)">
+          
+          <!-- Name -->
+          <div>
+            <label for="nombre" class="sr-only">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="correo" class="sr-only">Correo</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="Correo*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+            />
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="telefono" class="sr-only">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Teléfono*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+            />
+          </div>
+
+          <!-- Country -->
+          <div>
+            <label for="pais" class="sr-only">País</label>
+            <input
+              type="text"
+              id="pais"
+              name="pais"
+              placeholder="País*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+            />
+          </div>
+
+          <!-- Company -->
+          <div>
+            <label for="empresa" class="sr-only">Empresa</label>
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
+              placeholder="Empresa*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
+            />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="mensaje" class="sr-only">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Mensaje*"
+              required
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 rounded-xl font-semibold text-white shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105"
+          >
+            Enviar
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleDownloadSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    const nombre = formData.get('nombre');
+    const correo = formData.get('correo');
+    const telefono = formData.get('telefono');
+    const pais = formData.get('pais');
+    const empresa = formData.get('empresa');
+    const mensaje = formData.get('mensaje');
+    
+    // Format WhatsApp message
+    const whatsappMessage = `*Solicitud de Descarga Shutdown App*%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Teléfono:* ${telefono}%0A*País:* ${pais}%0A*Empresa:* ${empresa}%0A*Mensaje:* ${mensaje}`;
+    
+    // WhatsApp number (replace with actual number)
+    const whatsappNumber = "51971089138";
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    form.reset();
+    
+    // Show success message
+    alert('¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.');
+  }
+</script>

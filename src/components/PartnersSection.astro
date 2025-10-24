@@ -1,0 +1,48 @@
+---
+const { partners } = Astro.props
+---
+
+<section id="partners" class="relative py-16 bg-gradient-to-b from-bs-surface-0 to-bs-surface-1">
+  <div class="bs-container">
+    
+    <!-- Partners Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto items-center justify-items-center">
+
+      {partners && partners.map((partner) => (
+        <div class="partner-logo">
+          <div class="glass p-8 rounded-xl flex items-center justify-center min-h-[120px] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/10">
+            <img
+              src={partner.image}
+              alt={partner.title}
+              class="max-w-full max-h-20 w-auto h-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .partner-logo {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .partner-logo:nth-child(1) { animation-delay: 0.1s; }
+  .partner-logo:nth-child(2) { animation-delay: 0.2s; }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
