@@ -11,31 +11,26 @@ const { title, subtitle, values } = Astro.props
       <p class="text-xl text-gray-400">{subtitle}</p>
     </div>
 
-    <!-- Hexagons Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
       
       {values.map((value, index) => (
-        <div class="hexagon-card" style={`animation-delay: ${index * 0.1}s`}>
-          <div class="hexagon-wrapper">
+        <div class="value-card" style={`animation-delay: ${index * 0.1}s`}>
+          <div class={`card-container card-${index + 1}`}>
             
-            <!-- Hexagon Shape -->
-            <div class={`hexagon hexagon-${index + 1}`}>
-              <div class="hexagon-inner glass">
-                
-                <!-- Icon -->
-                <div class="mb-6">
-                  <svg class="w-16 h-16 mx-auto text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={value.icon} />
-                  </svg>
-                </div>
+            <!-- Icon Section -->
+            <div class="icon-section">
+              <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={value.icon} />
+              </svg>
+            </div>
 
-                <!-- Number -->
-                <div class="text-6xl font-bold text-white/90 mb-4">{index + 1}</div>
-
-                <!-- Content -->
-                <h3 class="text-lg font-semibold text-white mb-2 leading-tight px-4">{value.title}</h3>
-
-              </div>
+            <!-- Content Section -->
+            <div class="content-section">
+              <h3 class="text-xl font-bold text-white mb-2 leading-tight">{value.title}</h3>
+              <button class="text-sm text-white/80 hover:text-white transition-colors duration-200 uppercase tracking-wide font-semibold">
+                Más información
+              </button>
             </div>
 
           </div>
@@ -45,85 +40,121 @@ const { title, subtitle, values } = Astro.props
     </div>
 
   </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
 </section>
 
 <style>
-  .hexagon-card {
-    animation: fadeInScale 0.8s ease-out forwards;
+  .value-card {
+    animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
   }
 
-  @keyframes fadeInScale {
+  @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: scale(0.8);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0);
     }
   }
 
-  .hexagon-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 115.47%; /* √3 ratio for hexagon */
-  }
-
-  .hexagon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  .card-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    height: 140px;
   }
 
-  .hexagon-1 {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  .card-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   }
 
-  .hexagon-2 {
+  .icon-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 140px;
+  }
+
+  .content-section {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* Color gradients for each card */
+  .card-1 {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  }
+
+  .card-2 {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  }
+
+  .card-3 {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  }
+
+  .card-4 {
+    background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+  }
+
+  .card-5 {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  }
+
+  .card-6 {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  }
+
+  .card-7 {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   }
 
-  .hexagon-3 {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  .card-8 {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
   }
 
-  .hexagon-4 {
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-  }
-
-  .hexagon-inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
-  .hexagon-card:hover .hexagon {
-    transform: translateY(-10px) rotate(5deg);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  }
-
-  /* Responsive adjustments */
+  /* Responsive */
   @media (max-width: 768px) {
-    .hexagon-wrapper {
-      max-width: 280px;
-      margin: 0 auto;
+    .card-container {
+      height: auto;
+      min-height: 120px;
     }
-  }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .hexagon-wrapper {
-      max-width: 220px;
-      margin: 0 auto;
+    .icon-section {
+      min-width: 100px;
+      padding: 1.5rem;
+    }
+
+    .icon-section svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .content-section {
+      padding: 1.5rem;
+    }
+
+    .content-section h3 {
+      font-size: 1rem;
     }
   }
 </style>
