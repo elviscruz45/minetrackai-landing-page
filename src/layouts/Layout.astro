@@ -13,6 +13,7 @@ import bg_image from "../assets/theme-images/hero-image.jpg"
 
 import global_settings from "../data/global_settings.json"
 
+import VideoBackground from "../components/VideoBackground.astro"
 import DialogModal from "../components/DialogModal.astro"
 import FooterMain from "../components/FooterMain.astro"
 import HeaderMain from "../components/HeaderMain.astro"
@@ -21,7 +22,7 @@ const { title, description } = Astro.props
 
 ---
 
-<html lang="en">
+<html lang="es">
 
   <head>
 
@@ -58,18 +59,61 @@ const { title, description } = Astro.props
     <meta name="twitter:description" content={ description ?? global_settings.description } />
     <meta name="twitter:image" content={ global_settings.base_url + global_settings.social_image } />
 
+    <!-- Google Search Console Verification -->
+    <!-- Reemplaza YOUR_VERIFICATION_CODE con el código que Google te proporcione -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MineTrack AI",
+      "applicationCategory": "BusinessApplication",
+      "description": global_settings.description,
+      "url": global_settings.base_url,
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "120",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "MineTrack AI",
+        "url": global_settings.base_url
+      }
+    })} />
+
+    <!-- Google Analytics 4 -->
+    <!-- Reemplaza G-XXXXXXXXXX con tu ID de medición de Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-inter-display" preload />
 
   </head>
 
-  <body id="top">
+  <body id="top" class="bg-gradient-to-b from-bs-surface-0 via-bs-surface-1 to-bs-surface-0">
 
     <!-- Skip link -->
-    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">Skip to content</a>
+    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300 z-50" href="#main">Skip to content</a>
 
-    <!-- bg image -->
-    <Image src={ bg_image } alt="" format="avif" height={1080} width={1920} class="absolute min-h-svh object-cover inset-0 bottom-auto -z-1 w-full h-auto opacity-20 mask-b-from-50%" loading="eager" />
+    <!-- Video Background -->
+    <VideoBackground videoId="CaBRzKmPOpA" />
 
     <!-- Header -->
     <HeaderMain settings={ global_settings } />

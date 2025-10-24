@@ -5,13 +5,16 @@
     "sans-serif";
   --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
 
-  --color-bs-surface-0: #121212;
-  --color-bs-surface-1: #18181b;
+  --color-bs-surface-0: #0a0a0a;
+  --color-bs-surface-1: #121212;
   --color-bs-surface-2: rgba(255, 255, 255, 0.03);
-  --color-bs-surface-3: #2f2f31;
+  --color-bs-surface-3: #1f1f23;
 
-  --color-bs-foreground-light: #eee;
-  --color-bs-foreground-dark: #9f9f9f;
+  --color-bs-foreground-light: #ffffff;
+  --color-bs-foreground-dark: #a1a1aa;
+
+  --color-bs-accent: #10b981;
+  --color-bs-accent-hover: #059669;
 
   --color-current: currentColor;
 
@@ -74,4 +77,40 @@
     1.004 83.8%,
     1
   );
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bs-surface-0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bs-surface-3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bs-accent);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-bs-accent);
+  color: white;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
