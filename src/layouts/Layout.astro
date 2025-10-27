@@ -20,6 +20,9 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 const { title, description } = Astro.props
 
+// ✅ Construir URL canónica correcta
+const canonicalURL = new URL(Astro.url.pathname, global_settings.base_url).href
+
 ---
 
 <html lang="es">
@@ -40,21 +43,24 @@ const { title, description } = Astro.props
     <meta name="theme-color" content={ global_settings.theme_color } />
     
     <!-- SEO Meta Tags -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
-    <link rel="canonical" href={ Astro.url.href } />
+    
+    <!-- ✅ URL Canónica corregida -->
+    <link rel="canonical" href={ canonicalURL } />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={ Astro.url.href } />
+    <meta property="og:url" content={ canonicalURL } />
     <meta property="og:title" content={ title ?? global_settings.title } />
     <meta property="og:description" content={ description ?? global_settings.description } />
     <meta property="og:image" content={ global_settings.base_url + global_settings.social_image } />
     <meta property="og:site_name" content="MineTrack AI" />
+    <meta property="og:locale" content="es_ES" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={ Astro.url.href } />
+    <meta name="twitter:url" content={ canonicalURL } />
     <meta name="twitter:title" content={ title ?? global_settings.title } />
     <meta name="twitter:description" content={ description ?? global_settings.description } />
     <meta name="twitter:image" content={ global_settings.base_url + global_settings.social_image } />
@@ -112,11 +118,11 @@ const { title, description } = Astro.props
     <!-- Skip link -->
     <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300 z-50" href="#main">Skip to content</a>
 
-    <!-- Video Background -->
-    <VideoBackground videoId="l1KJ5uKUfHY" />
-
     <!-- Header -->
     <HeaderMain settings={ global_settings } />
+
+    <!-- Video Background -->
+    <VideoBackground videoId="l1KJ5uKUfHY" />
 
     <!-- Main slot -->
     <main id="main">
@@ -132,4 +138,3 @@ const { title, description } = Astro.props
   </body>
 
 </html>
-

@@ -4,10 +4,20 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://www.minetrack.site",
-  integrations: [sitemap()],
+  trailingSlash: "never", // ✅ Evita URLs con / al final
+  build: {
+    format: "file", // ✅ Genera index.html en lugar de /index/
+  },
   vite: {
     plugins: [tailwindcss()],
   },
+  integrations: [
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
+  ],
   experimental: {
     fonts: [
       {

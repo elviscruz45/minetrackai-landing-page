@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "http://www.minetrack.site/(.*)",
+      "destination": "https://www.minetrack.site/$1",
+      "permanent": true
+    },
+    {
+      "source": "http://minetrack.site/(.*)",
+      "destination": "https://www.minetrack.site/$1",
+      "permanent": true
+    },
+    {
+      "source": "https://minetrack.site/(.*)",
+      "destination": "https://www.minetrack.site/$1",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false,
+  "cleanUrls": true
+}
