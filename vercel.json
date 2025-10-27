@@ -1,21 +1,27 @@
 {
   "redirects": [
     {
-      "source": "http://www.minetrack.site/(.*)",
-      "destination": "https://www.minetrack.site/$1",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "minetrack.site"
+        }
+      ],
+      "destination": "https://www.minetrack.site",
       "permanent": true
     },
     {
-      "source": "http://minetrack.site/(.*)",
-      "destination": "https://www.minetrack.site/$1",
-      "permanent": true
-    },
-    {
-      "source": "https://minetrack.site/(.*)",
-      "destination": "https://www.minetrack.site/$1",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "minetrack.site"
+        }
+      ],
+      "destination": "https://www.minetrack.site/:path*",
       "permanent": true
     }
   ],
-  "trailingSlash": false,
-  "cleanUrls": true
+  "trailingSlash": false
 }
