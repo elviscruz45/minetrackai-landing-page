@@ -30,11 +30,11 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
       </div>
 
       <!-- Right: Video Preview -->
-      <div class="relative">
-        <div class="relative glass rounded-2xl overflow-hidden group cursor-pointer" onclick="document.getElementById('video-modal').showModal()">
+      <div class="relative flex justify-center">
+        <div class="relative glass rounded-2xl overflow-hidden group cursor-pointer max-w-sm" onclick="document.getElementById('video-modal').showModal()">
           
-          <!-- Video Thumbnail -->
-          <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
+          <!-- Video Thumbnail (Shorts - Vertical) -->
+          <div class="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
             
             <!-- YouTube Thumbnail -->
             <img 
@@ -72,8 +72,8 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
     </div>
   </div>
 
-  <!-- Video Modal -->
-  <dialog id="video-modal" class="fixed inset-0 bg-black/90 m-auto z-50 p-0 rounded-2xl w-full max-w-5xl backdrop:bg-black/80">
+  <!-- Video Modal (Shorts - Vertical) -->
+  <dialog id="video-modal" class="fixed inset-0 bg-black/90 m-auto z-50 p-0 rounded-2xl w-full max-w-md backdrop:bg-black/80">
     <div class="relative">
       <!-- Close Button -->
       <button 
@@ -86,8 +86,8 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
         </svg>
       </button>
 
-      <!-- Video iframe -->
-      <div class="aspect-video w-full bg-black rounded-2xl overflow-hidden">
+      <!-- Video iframe (Shorts) -->
+      <div class="aspect-[9/16] w-full bg-black rounded-2xl overflow-hidden">
         <iframe 
           id="video-iframe"
           width="100%" 
