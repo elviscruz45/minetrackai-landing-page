@@ -3,7 +3,6 @@
 import Logo from '../assets/theme-images/pandora2.webp'
 
 const { settings } = Astro.props
-console.log('settings.nav →', settings.nav)
 
 ---
 
@@ -13,19 +12,19 @@ console.log('settings.nav →', settings.nav)
   <div class="bs-container py-4 flex justify-between items-center">
 
     <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href="/" aria-label={ settings.title + ' - Home' }>
+    <a class="flex xl:min-w-32 group" href="/#inicio" aria-label={ settings.title + ' - Home' }>
 
       <img src={Logo.src} alt={settings.title} class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="168" width="168" />
 
     </a>
 
-    <!-- Nav -->
-    <nav class="hidden col-span-6 md:flex mx-auto self-stretch lg:gap-2">
+    <!-- Nav Desktop -->
+    <nav class="hidden md:flex mx-auto self-stretch lg:gap-2">
 
       <!-- Links -->
       { settings.nav.map( item =>
 
-        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" href={item.link}>
+        <a class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0 transition-all duration-300" href={item.link}>
           { item.title }
         </a>
 
@@ -33,11 +32,71 @@ console.log('settings.nav →', settings.nav)
 
     </nav>
 
-    <!-- CTA -->
-    <!-- <button type="button" class="min-w-32 px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg font-semibold text-white shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105" onclick="demo.showModal()">
-      { settings.demo.title }
-    </button> -->
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-btn" 
+      class="md:hidden p-2 text-white hover:text-bs-accent transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path id="menu-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
 
   </div>
 
+  <!-- Mobile Menu -->
+  <nav 
+    id="mobile-menu" 
+    class="md:hidden hidden bg-bs-surface-1/95 backdrop-blur-xl border-t border-white/5"
+  >
+    <div class="bs-container py-4 flex flex-col gap-2">
+      { settings.nav.map( item =>
+        <a 
+          class="mobile-menu-link px-4 py-3 rounded-lg text-white hover:bg-white/5 hover:text-bs-accent transition-all duration-300" 
+          href={item.link}
+        >
+          { item.title }
+        </a>
+      )}
+    </div>
+  </nav>
+
 </header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+  const mobileLinks = document.querySelectorAll('.mobile-menu-link');
+
+  function toggleMenu() {
+    const isExpanded = mobileMenuBtn?.getAttribute('aria-expanded') === 'true';
+    mobileMenuBtn?.setAttribute('aria-expanded', String(!isExpanded));
+    mobileMenu?.classList.toggle('hidden');
+    menuOpen?.classList.toggle('hidden');
+    menuClose?.classList.toggle('hidden');
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu?.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('header') && !mobileMenu?.classList.contains('hidden')) {
+      toggleMenu();
+    }
+  });
+</script>

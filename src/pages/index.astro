@@ -35,12 +35,14 @@ import partners from "../data/partners.json"
 
 <Layout title={ global_settings.title }>
 
+  <!-- Hero / Inicio -->
   <HeroSection
     content={ home.hero_content }
     settings={ global_settings }
     title={ home.hero_title }
   />
 
+  <!-- Características -->
   <FeaturesSection
     title="Gestione en tiempo real la ejecución del mantenimiento y mejore el rendimiento"
     features={features}
@@ -51,6 +53,7 @@ import partners from "../data/partners.json"
     description="<p>Seguimiento desde terreno reportando avances de actividades, demoras, condiciones de seguridad, hitos y hallazgos junto con documentar fotográficamente condiciones de terreno durante la ejecución del mantenimiento, directamente desde el móvil.</p>"
   />
 
+  <!-- Nosotros / Propuesta de Valor -->
   <ValuePropositionSection
     title="Nuestra propuesta de valor"
     subtitle="Es reducir costos y aumentar la disponibilidad de sus activos"
@@ -62,6 +65,7 @@ import partners from "../data/partners.json"
     videoId="_1t4AovP_-k"
   />
 
+  <!-- Clientes -->
   <ClientsSection
     clients={ clients }
     title="Entérate por qué nuestros clientes nos eligen"
@@ -71,15 +75,17 @@ import partners from "../data/partners.json"
     partners={partners}
   />
 
+  <!-- Preguntas frecuentes -->
+  <FaqSection
+    faq={ faq }
+    title={ home.faq_title }
+  />
+
+  <!-- Contactanos / Descarga -->
   <DownloadAppSection
     title="Descarga MineTrack AI App!"
     description="<p>Solicita tu cuenta para pruebas o pilotajes de MineTrack AI App en tu planta, a través del formulario o directamente a <strong>operaciones@pandorasoftwarecompany.site</strong></p>"
     email="operaciones@pandorasoftwarecompany.site"
-  />
-
-  <FaqSection
-    faq={ faq }
-    title={ home.faq_title }
   />
 
 </Layout>
