@@ -23,6 +23,8 @@ const { title, description } = Astro.props
 // ✅ Construir URL canónica correcta
 const canonicalURL = new URL(Astro.url.pathname, global_settings.base_url).href
 
+console.log('global_settings →', global_settings)
+
 ---
 
 <html lang="es">

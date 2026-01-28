@@ -12,20 +12,29 @@
   "theme_color": "#18181b",
   "nav": [
     {
-      "title": "Producto",
-      "link": "/#services"
+      "title": "Inicio",
+      "link": "/"
     },
     {
       "title": "Características",
-      "link": "/#case-studies"
+      "link": "/#caracteristicas"
     },
     {
-      "title": "Precio",
-      "link": "/#pricing"
+      "title": "Nosotros",
+      "link": "/#nosotros"
     },
+    {
+      "title": "Clientes",
+      "link": "/#clientes"
+    },
+
     {
       "title": "Preguntas frecuentes",
       "link": "/#faq"
+    },
+    {
+      "title": "Contactanos",
+      "link": "/#contactanos"
     }
   ],
 

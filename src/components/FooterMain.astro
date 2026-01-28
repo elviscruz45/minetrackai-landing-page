@@ -37,7 +37,7 @@ const { settings } = Astro.props
         <!-- Nav -->
         <nav class="flex flex-col">
 
-          { settings.nav.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
+          { [...settings.nav].sort((a,b) => a.title.localeCompare(b.title)).map( item =>
 
             <a href={ item.link }>
               { item.title }
@@ -50,7 +50,7 @@ const { settings } = Astro.props
         <!-- Social links -->
         <nav class="flex flex-col">
 
-          { settings.social_links.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
+          { [...settings.social_links].sort((a,b) => a.title.localeCompare(b.title)).map( item =>
 
             <a href={ item.link }>
               { item.title }
