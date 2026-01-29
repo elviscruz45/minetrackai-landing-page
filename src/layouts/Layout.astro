@@ -20,10 +20,12 @@ import HeaderMain from "../components/HeaderMain.astro"
 
 const { title, description } = Astro.props
 
-// ✅ Construir URL canónica correcta
-const canonicalURL = new URL(Astro.url.pathname, global_settings.base_url).href
-
-console.log('global_settings →', global_settings)
+// ✅ Construir URL canónica correcta sin trailing slash
+let pathname = Astro.url.pathname
+if (pathname.endsWith('/') && pathname !== '/') {
+  pathname = pathname.slice(0, -1)
+}
+const canonicalURL = new URL(pathname, global_settings.base_url).href
 
 ---
 

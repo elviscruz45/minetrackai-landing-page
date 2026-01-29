@@ -1,27 +1,23 @@
 {
-  "redirects": [
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "headers": [
     {
-      "source": "/",
-      "has": [
+      "source": "/(.*)",
+      "headers": [
         {
-          "type": "host",
-          "value": "minetrack.site"
-        }
-      ],
-      "destination": "https://www.minetrack.site",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
         {
-          "type": "host",
-          "value": "minetrack.site"
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
         }
-      ],
-      "destination": "https://www.minetrack.site/:path*",
-      "permanent": true
+      ]
     }
-  ],
-  "trailingSlash": false
+  ]
 }
