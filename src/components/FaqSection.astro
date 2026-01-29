@@ -9,8 +9,11 @@ const { title, faq } = Astro.props
 <section id="faq" class="bs-container bs-mt-lg grid scroll-mt-20">
 
   <!-- Title -->
-  { title && <h2 class="bs-h2 text-center md:text-left" set:html={ title } />}
-
+  <!-- { title && <h2 class="bs-h2 text-center md:text-left" set:html={ title } />} -->
+      <div class="text-center mb-16 max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" set:html="Preguntas Frecuentes"/>
+      <p class="text-xl text-gray-400"></p>
+    </div>
   <!-- FAQ -->
   <div class="grid gap-2 bs-mt-sm">
 

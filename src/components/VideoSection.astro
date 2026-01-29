@@ -9,15 +9,15 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
       
       <!-- Left: Content -->
       <div class="space-y-6">
-        <div class="inline-block px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full">
+        <!-- <div class="inline-block px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full">
           <span class="text-red-400 font-semibold">Conoce MineTrack AI</span>
-        </div>
+        </div> -->
         
         <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight" set:html={title} />
         
         {subtitle && <p class="text-xl text-gray-300">{subtitle}</p>}
 
-        <button 
+        <!-- <button 
           type="button"
           onclick="document.getElementById('video-modal').showModal()"
           class="group mt-6 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 rounded-xl font-semibold text-white shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 inline-flex items-center gap-3"
@@ -26,7 +26,7 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
             <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
           </svg>
           Ver Video Demo
-        </button>
+        </button> -->
       </div>
 
       <!-- Right: Video Preview -->
@@ -35,7 +35,7 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
           
           <!-- Video Thumbnail (Shorts - Vertical) -->
           <div class="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
-            
+
             <!-- YouTube Thumbnail -->
             <img 
               src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
@@ -59,14 +59,14 @@ const { title, subtitle, videoId = "8dfSzFQkV0s" } = Astro.props
         </div>
 
         <!-- Floating badge -->
-        <div class="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl shadow-emerald-500/30 font-semibold">
+        <!-- <div class="absolute -top-4 -right-4 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl shadow-emerald-500/30 font-semibold">
           <span class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
             </svg>
             Demo
           </span>
-        </div>
+        </div> -->
       </div>
 
     </div>

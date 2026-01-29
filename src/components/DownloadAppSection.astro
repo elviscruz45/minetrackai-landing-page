@@ -6,15 +6,20 @@ const { title, description, email } = Astro.props
   <div class="bs-container">
     
     <!-- MineTrack AI Logo -->
-    <div class="text-center mb-12">
+    <!-- <div class="text-center mb-12">
       <div class="inline-flex items-center gap-3 mb-6">
         <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-xl shadow-red-500/30">
           <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
           </svg>
         </div>
-        <span class="text-4xl font-bold text-red-500">MineTrack AI</span>
+        <span class="text-4xl font-bold text-red-500">Contactanos</span>
       </div>
+    </div> -->
+
+        <div class="text-center mb-16 max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" set:html="Contactanos"/>
+      <!-- <p class="text-xl text-gray-400">Contactanos</p> -->
     </div>
 
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -27,7 +32,7 @@ const { title, description, email } = Astro.props
         <p class="text-lg text-gray-300 leading-relaxed" set:html={description} />
 
         <!-- Contact email -->
-        <div class="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl">
+        <!-- <div class="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl">
           <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
@@ -35,7 +40,7 @@ const { title, description, email } = Astro.props
           <a href={`mailto:${email}`} class="text-white hover:text-red-400 transition-colors duration-200 font-semibold">
             {email}
           </a>
-        </div>
+        </div> -->
 
         <!-- App Store Badges -->
         <div class="flex flex-wrap gap-4 mt-8">
@@ -197,3 +202,4 @@ const { title, description, email } = Astro.props
     alert('¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.');
   }
 </script>
+

@@ -3,11 +3,21 @@ const { partners } = Astro.props
 ---
 
 <section id="partners" class="relative py-16 bg-gradient-to-b from-bs-surface-0 to-bs-surface-1">
+
+      <!-- Title -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Socios Estratégicos</h2>
+        <p class="text-xl text-gray-400">Garantía de calidad y confianza</p>
+
+    </div>
   <div class="bs-container">
     
     <!-- Partners Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto items-center justify-items-center">
 
+
+
+      
       {partners && partners.map((partner) => (
         <div class="partner-logo">
           <div class="glass p-8 rounded-xl flex items-center justify-center min-h-[120px] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/10">
