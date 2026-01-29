@@ -1,6 +1,28 @@
 {
-  "trailingSlash": false,
-  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "minetrack.site"
+        }
+      ],
+      "destination": "https://www.minetrack.site",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "minetrack.site"
+        }
+      ],
+      "destination": "https://www.minetrack.site/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -19,5 +41,6 @@
         }
       ]
     }
-  ]
+  ],
+  "trailingSlash": false
 }
