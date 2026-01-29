@@ -1,22 +1,37 @@
 [
   {
-    "question": "¿Qué tan segura está mi información operativa?",
-    "answer": "Utilizamos cifrado estándar de la industria y prácticas seguras de almacenamiento para proteger sus datos. Todos los archivos están encriptados con AES-256 y nuestros servidores se monitorean y actualizan regularmente para prevenir vulnerabilidades."
+    "category": "Seguridad y Cumplimiento",
+    "question": "¿Cómo garantiza MineTrack AI la confidencialidad e integridad de la data operativa crítica?",
+    "answer": "La seguridad es nuestra prioridad. Implementamos una arquitectura de 'Seguridad por Diseño' utilizando cifrado AES-256 para datos en reposo y protocolos TLS 1.3 para datos en tránsito. Además, nuestros servidores cuentan con monitoreo continuo de vulnerabilidades y copias de seguridad redundantes, asegurando que su información operativa esté protegida bajo estándares industriales estrictos."
   },
   {
-    "question": "¿Ofrecen una prueba gratuita de la plataforma?",
-    "answer": "Sí, ofrecemos una prueba gratuita de 14 días con acceso a las funciones principales de MineTrack AI para la gestión de paradas de planta y mantenimiento crítico. No se requiere tarjeta de crédito."
+    "category": "Despliegue e Infraestructura",
+    "question": "¿Qué opciones de despliegue ofrecen? ¿Es posible una implementación On-Premise?",
+    "answer": "Ofrecemos un modelo híbrido flexible. Nuestra arquitectura Cloud-Native garantiza escalabilidad y colaboración inmediata. Sin embargo, para operaciones con requisitos estrictos de soberanía de datos o latencia, desplegamos soluciones On-Premise (locales) bajo solicitud, manteniendo la capacidad de exportar analítica en formatos estándar (JSON, CSV, PDF)."
   },
   {
-    "question": "¿Puedo integrar MineTrack AI con otras plataformas?",
-    "answer": "Por supuesto. MineTrack AI se puede integrar con sistemas ERP como SAP, Oracle, y plataformas de gestión como Power BI, MS Project, entre otros."
+    "category": "Interoperabilidad",
+    "question": "¿MineTrack AI se integra con nuestro ecosistema de software actual (ERP/Legacy)?",
+    "answer": "Absolutamente. MineTrack AI está diseñado para la interoperabilidad. Contamos con APIs RESTful que facilitan la integración bidireccional con ERPs líderes como SAP y Oracle, así como con herramientas de gestión y visualización como Microsoft Project y Power BI, permitiendo un flujo de datos unificado sin silos de información."
   },
   {
-    "question": "¿Qué tipo de soporte brindan para la implementación?",
-    "answer": "Ofrecemos soporte 24/7 por chat y correo electrónico, además de un centro de ayuda con tutoriales, buenas prácticas de mantenimiento y guías paso a paso para cada funcionalidad."
+    "category": "Operatividad en Terreno",
+    "question": "¿La aplicación móvil funciona en frentes de trabajo sin conectividad a internet (Offline)?",
+    "answer": "Sí. Entendemos la realidad de la operación minera. Nuestra aplicación móvil opera con una arquitectura 'Offline-First', permitiendo a los técnicos reportar avances, demoras y hallazgos fotográficos en tiempo real sin conexión. El sistema sincroniza automáticamente la data con la nube en cuanto se restablece la red, garantizando cero pérdida de información."
   },
   {
-    "question": "¿Está disponible una versión local (on-premise) de la plataforma?",
-    "answer": "Nuestra plataforma está basada en la nube para mayor comodidad y colaboración, pero también ofrecemos soluciones on-premise bajo solicitud, con opciones de exportación de datos en formatos estándar como CSV, PDF y JSON."
+    "category": "Impacto y ROI",
+    "question": "¿Qué métricas de gestión genera la plataforma y cuál es el impacto esperado?",
+    "answer": "MineTrack AI procesa la data para generar KPIs automáticos de disponibilidad y confiabilidad, identificando la ruta crítica de sus paradas de planta. Nuestros clientes reportan una reducción promedio del 30% en tiempos de inactividad gracias a la visibilidad en tiempo real y la optimización de la toma de decisiones basada en datos."
+  },
+  {
+    "category": "Comercial y Piloto",
+    "question": "¿Existe un programa piloto para validar la solución en nuestra unidad minera?",
+    "answer": "Sí. Ofrecemos un periodo de prueba técnica de 14 días con acceso full a las funcionalidades de gestión de paradas y mantenimiento crítico. Esto permite a su equipo validar el valor de la herramienta en un entorno real antes de cualquier compromiso comercial."
+  },
+  {
+    "category": "Soporte Técnico",
+    "question": "¿Qué nivel de soporte y acompañamiento (Onboarding) ofrecen?",
+    "answer": "Brindamos soporte técnico especializado 24/7 vía chat y correo electrónico para asegurar la continuidad operativa. Además, su equipo tendrá acceso a nuestro Centro de Recursos, que incluye guías de implementación, tutoriales de mejores prácticas y documentación técnica detallada."
   }
 ]
